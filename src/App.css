@@ -1,3 +1,16 @@
+img {
+  height: 200px;
+  width: 200px;
+}
+
+#gameboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border: 1px solid;
+}
+
+
 .App {
   text-align: center;
 }
