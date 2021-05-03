@@ -1,6 +1,7 @@
 import './App.css';
 import React, {useState, useEffect} from "react";
 import getCards from "./Picture.js"
+// import {getFiles} from "./Picture.js"
 
 
 import GameBoard from "./components/GameBoard";
@@ -18,6 +19,7 @@ function App() {
 
   //WHEN APP IS FIRST MOUNTED, DO:
   useEffect(() => {
+    // getFiles();
     randomizeCards();
     console.log("first mounted!");
   }, []);
