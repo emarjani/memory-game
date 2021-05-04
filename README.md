@@ -2,5 +2,5 @@
 
 A "Community" themed memory game, built with React JS.
 
-##Links
+## Links
 * [Live Demo](https://community-game.herokuapp.com/)
