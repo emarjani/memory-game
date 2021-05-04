@@ -1,8 +1,6 @@
 import './App.css';
 import React, {useState, useEffect} from "react";
-import getCards from "./Picture.js"
-// import {getFiles} from "./Picture.js"
-
+import getCards from "./Picture.js";
 
 import GameBoard from "./components/GameBoard";
 import Scoreboard from "./components/Scoreboard";
@@ -10,7 +8,7 @@ import Scoreboard from "./components/Scoreboard";
 //better name functions later
 function App() {
 
-  const [boardSize, setBoardSize] = useState(9);
+  const [boardSize, setBoardSize] = useState(8);
   const [pickedCards, setPickedCards] = useState([]);
   const [allCards, setAllCards] = useState(getCards());
   const [board, setBoard] = useState([]);
@@ -19,9 +17,7 @@ function App() {
 
   //WHEN APP IS FIRST MOUNTED, DO:
   useEffect(() => {
-    // getFiles();
     randomizeCards();
-    console.log("first mounted!");
   }, []);
 
   useEffect(() => {
@@ -81,20 +77,41 @@ function App() {
     setPickedCards(updated);
   };
 
-  // add help tooltip later
+  const openTooltip = () => {
+    document.getElementById("instructions").style.display = "block";
+  };
+
+  const closeTooltip = () => {
+    document.getElementById("instructions").style.display = "none";
+  }
+
   return (
     <div className="App">
-      <h1>Memory Game!</h1>
-      
-      <Scoreboard
-      highscore={highScore}
-      score={pickedCards.length}
-      />
+      <img id="logo" src={require(`./imgs/community_logo.png`).default}/>
 
-      <GameBoard 
-      cards={board}
-      pick = {chosenCard}
-      />
+      <div id="content">
+        <div id="subheader">
+          <div id="tooltip">
+            <img onMouseOver={openTooltip} onMouseOut={closeTooltip} src = {require("./imgs/icons8-help-48.png").default}/>
+            <p id="instructions">
+              This is a memory game. The objective is to click on as many <b>unique</b> characters as possible.
+              Have fun!
+            </p>
+          </div>
+
+          <Scoreboard
+          highscore={highScore}
+          score={pickedCards.length}
+          />
+        </div>
+        
+        <GameBoard 
+        cards={board}
+        pick = {chosenCard}
+        />
+
+      </div>
+      
     </div>
   );
 }

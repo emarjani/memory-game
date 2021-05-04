@@ -4,8 +4,8 @@ function Scoreboard(props){
 
     return(
         <div id="scoreboard">
-            <p>Best record: {highscore}</p>
             <p>Score: {score}</p>
+            <p id="highscore">Best record: {highscore}</p>
         </div>
     );
 };

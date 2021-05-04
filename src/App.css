@@ -1,51 +1,103 @@
+.App {
+  text-align: center;
+  background-image: url("./imgs/paper.jfif");
+}
+
+#content {
+  margin: 0 8% 0 8%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
 img {
-  height: 200px;
-  width: 200px;
+  height: 190px;
+  width: 190px;
+
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+#logo {
+  width: 480px;
 }
 
 #gameboard {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  border: 1px solid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1em;
+  margin: 1em 0 1em 0;
 }
 
 
-.App {
-  text-align: center;
+#gameboard div {
+  font-family: "Indie Flower";
+  font-weight: 600;
+  font-size: 17px;
+  border-radius: 5px;
+  padding: 1.5em 1em 0.5em 1em;
+  background-image: linear-gradient(to bottom right, rgb(154, 159, 167), white)
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#gameboard img {
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#gameboard div:hover {
+  box-shadow: 0px 0px 5px 5px rgb(255, 255, 255);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#gameboard p {
+  border-radius: 5px;
+  border: 2px solid rgb(192, 192, 192);
+  padding: 0.3em;
+  background-color: white;
+}
+
+#subheader {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-width: 100%;
+}
+
+#scoreboard {
+  display: flex;
+  border-radius: 7px;
+  background-color: rgb(101, 132, 189);
+}
+
+#scoreboard p {
+  font-size: 16px;
   color: white;
+  margin: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+#tooltip {
+  position: relative;
+  min-width: 40%;
+  font-size: 16px;
+  text-align: start;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#tooltip img {
+  max-height: 3em;
+  max-width: 3em;
 }
+
+
+#instructions {
+  display: none;
+  position: absolute;
+  top: -100%;
+
+  background-color: rgba(82, 82, 82, 0.7);
+  color: white;
+  padding: 1em;
+  font-size: 18px;
+}
+
+
