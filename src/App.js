@@ -10,15 +10,17 @@ function App() {
 
   const [boardSize, setBoardSize] = useState(8);
   const [pickedCards, setPickedCards] = useState([]);
-  const [allCards, setAllCards] = useState(getCards());
+  const [allCards, setAllCards] = useState([]);
   const [board, setBoard] = useState([]);
   const [highScore, setHighScore] = useState(0);
 
 
   //WHEN APP IS FIRST MOUNTED, DO:
+
   useEffect(() => {
-    randomizeCards();
-  }, []);
+    //set board initially
+    setAllCards(getCards());
+  }, [])
 
   useEffect(() => {
     //update highscore
@@ -31,7 +33,7 @@ function App() {
     } else {
       randomizeCards();
     }
-  }, [pickedCards]);
+  }, [allCards, pickedCards]);
 
 
   function shuffle(array) {
@@ -109,7 +111,7 @@ function App() {
         cards={board}
         pick = {chosenCard}
         />
-
+1
       </div>
       
     </div>

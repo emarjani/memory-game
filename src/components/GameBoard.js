@@ -1,6 +1,5 @@
 function GameBoard(props){
 
-    //3x3 board
     const {pick, cards} = props;
 
     return(
@@ -10,8 +9,8 @@ function GameBoard(props){
                 const [image, name] = card;
                 return(
                     <div key={name}>
-                        <img src={image} alt="" onClick={(e) => {
-                            e.preventDefault();
+                        <img src={image} alt="" onClick={() => {
+                            
                             pick(name)
                             }}/>
                         <p>{name}</p>
