@@ -9,10 +9,7 @@ function GameBoard(props){
                 const [image, name] = card;
                 return(
                     <div key={name}>
-                        <img src={image} alt="" onClick={() => {
-                            
-                            pick(name)
-                            }}/>
+                        <img src={image} alt="" onClick={() => { pick(name) }}/>
                         <p>{name}</p>
                     </div>
                 )

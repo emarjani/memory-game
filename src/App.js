@@ -59,7 +59,7 @@ function App() {
     let temp = shuffle(allCards);
     
     let index = temp.findIndex((card) => !pickedCards.includes(card[1]));
-    console.log(temp[index][1]);
+    // console.log(temp[index][1]);
     let new_board = [temp[index]];
 
     //starting index to add rest of grid
@@ -89,10 +89,8 @@ function App() {
 
   return (
     <div className="App">
-      <img id="logo" src={require(`./imgs/community_logo.png`).default}/>
-
       <div id="content">
-        <div id="subheader">
+        <div id="header">
           <div id="tooltip">
             <img onMouseOver={openTooltip} onMouseOut={closeTooltip} src = {require("./imgs/icons8-help-48.png").default}/>
             <p id="instructions">
@@ -100,6 +98,8 @@ function App() {
               Have fun!
             </p>
           </div>
+
+          <img id="logo" src={require(`./imgs/community_logo.png`).default}/>
 
           <Scoreboard
           highscore={highScore}
